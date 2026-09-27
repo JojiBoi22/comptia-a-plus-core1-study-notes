@@ -17,14 +17,14 @@ These are personal study notes, not official CompTIA or Dion materials.
 | Folder | Topic |
 |--------|--------|
 | `01-Introduction` | PC functions, firmware, safety, six-step method |
-| `02-Motherboards` | Processor features, board parts, expansion cards |
-| `03-Cooling-and-Power` | Fans, liquid cooling, power supply |
+| `02-Motherboards` | Form factors, sockets, CPU features, slots |
+| `03-Cooling-and-Power` | Fans, liquid, PSU rails and install |
 | `04-System-Memory` | Random access memory types and install |
 | `05-BIOS-UEFI` | Firmware that starts the computer |
 | `06-Laptop-Hardware` | Batteries, keyboards, SO-DIMM, mini-PCIe, storage |
 | `07-Virtualization-Concepts` | Virtual machines and containers |
 | `08-Cloud-Computing` | Cloud types and services |
-| `09-Networking-Basics` | Network boxes, cables, tools |
+| `09-Networking-Basics` | Network boxes, copper, fibre, tools |
 | `10-Wireless-Networks` | Wi-Fi bands, security, short-range radio |
 | `11-Internet-Connections` | How a home or office reaches the internet |
 | `12-Network-Addressing` | IPv4, IPv6, ports, TCP vs UDP |
@@ -37,6 +37,7 @@ These are personal study notes, not official CompTIA or Dion materials.
 | `19-Troubleshooting-Print-Devices` | Queue, feed, quality, finishing |
 | `20-Troubleshooting-Networks` | Wired, wireless, VoIP, APIPA, auth |
 | `21-Troubleshooting-Mobile-Devices` | Power, hardware, performance |
-| `22-Storage-Devices` | HDD, SSD, RAID intro, RPM |
+| `22-Storage-Devices` | HDD, SSD, SATA/PATA, RAID (`RAID.md`) |
+| `23-Cables-and-Connectors` | Bits vs bytes, USB, video, HDCP |
 
-Handwritten pages are added in batches (about 20 photos at a time).
+Handwritten pages are added in batches.

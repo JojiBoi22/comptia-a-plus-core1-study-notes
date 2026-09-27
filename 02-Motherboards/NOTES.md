@@ -1,53 +1,73 @@
-# Motherboards and processors
+# Motherboards and processors (Objective 3.5)
 
-The **motherboard** is the main circuit board. The **CPU** (central processing unit) is the processor that runs instructions.
+The **motherboard** is the backbone for power, data, and sockets. Pick the board **first** when you build — memory type and storage connectors must match it.
+
+## Four jobs around the processor
+
+| Job | Meaning |
+|-----|---------|
+| **Input** | Accept data in a form the processor can use |
+| **Processing** | The **CPU** (central processing unit) acts on that data |
+| **Output** | Result leaves through the board to screen, disk, network |
+| **Storage** | Keep data a short time in **cache** or **RAM** (random access memory), or for good on a disk |
+
+## Form factors (board size and hole pattern)
+
+Form factor = shape, screw layout, case, and power-supply style.
+
+| Name | Size (inches) | Size (mm) | Notes |
+|------|---------------|-----------|-------|
+| **ATX** (Advanced Technology eXtended) | 12 × 9.6 | 305 × 244 | Full desktop, rear port cluster |
+| Mini-ATX | 11.2 × 8.2 | 284 × 208 | Same idea, slightly smaller |
+| Micro-ATX | 9.6 × 9.6 | 244 × 244 | About four expansion slots |
+| Mini-ITX (Information Technology eXtended) | 6.7 × 6.7 | 170 × 170 | Small / home theatre / embedded |
+
+Even smaller ITX cousins: nano, pico, mobile-ITX for appliances.
+
+## CPU sockets
+
+**ZIF** (Zero Insertion Force) lever: lift, drop the chip in flat, close. Do not bend pins.
+
+- **Intel LGA** (Land Grid Array) — pins live **on the board**.
+- **AMD PGA** (Pin Grid Array) — pins live **on the chip** (example AM4). Newer AMD also uses LGA (AM5).
 
 ## Processor features
 
-- A **thread** is one stream of instructions from a program.
-- **SMT** (simultaneous multithreading), Intel name **Hyper-Threading**: one physical core pretends to be two logical processors so idle parts of the core can work on a second thread.
-- **SMP** (symmetric multiprocessing): two or more physical processor packages sharing memory (servers).
-- **Multi-core**: several cores in one chip (dual, quad, and so on).
-- **Virtualization support**: Intel **VT-x** (Virtualization Technology) or AMD **AMD-V**. **SLAT** (second-level address translation) — Intel **EPT** (extended page tables) / AMD **RVI** (rapid virtualization indexing) — makes guest memory faster. Turn it on in firmware.
+- **SMT** (Simultaneous Multithreading) / Intel **Hyper-Threading**: one physical core runs two instruction streams. Software must be multi-thread aware or you still have one busy thread.
+- **SMP** (Symmetric Multiprocessing): two or more **physical packages** on one board (2 or 4 sockets). All chips must match; the operating system must support it.
+- **Multi-core**: several cores in **one** package (dual / quad / hexa / octa). Can combine with SMT (8 cores + SMT ≈ 16 threads).
+- **Virtualization**: Intel **VT-x** plus **EPT** / **SLAT**; AMD **AMD-V** plus **RVI** / **SLAT**. Needed for VMware, VirtualBox, Hyper-V to run well. Enable in firmware.
 
-```mermaid
-flowchart LR
-  App[Program] --> Threads[One or more threads]
-  Threads --> Core[Physical core]
-  Core --> SMT[Optional second logical processor]
-```
+### Architecture
 
-## Processor families
+Fetch → decode → execute in the **ALU** (arithmetic logic unit) / **FPU** (floating-point unit) → write result.
 
-| Family | Meaning | Memory limit idea |
-|--------|---------|-------------------|
-| **x86** | 32-bit Intel-style | About 4 gigabytes of memory |
-| **x64** | 64-bit | Far more memory; can still run 32-bit programs |
-| **ARM** | Reduced instruction set, low power | Phones, Apple Silicon. A virtual machine on ARM normally needs an ARM guest system. |
+| Family | Meaning |
+|--------|---------|
+| **x86** (IA-32) | 32-bit. Rough ceiling ~4 GB RAM |
+| **x64** (AMD64 / Intel 64) | 64-bit. Today’s desktop standard |
+| **ARM** (RISC) | Smaller instruction set, low power and heat. Phones and many laptops |
 
-## Board parts you will see
+## Connectors on an ATX / B550-style board
 
-- **CPU socket** (example AM4) with a **ZIF** (zero insertion force) lever — you should not force the chip in.
-- **DIMM** (dual inline memory module) slots for system memory.
-- Power: **24-pin ATX** (main board power) and **8-pin EPS** (extra processor power).
-- Storage: **SATA** (Serial ATA cables to disks) and **M.2** (small stick slots on the board).
-- **PCIe** (Peripheral Component Interconnect Express) slots: **x16** for a graphics card, **x1** for a small card.
-- Front-panel headers (power button, USB), **CMOS** battery (keeps firmware clock/settings), rear ports (USB, video, network, audio).
+- CPU socket + ZIF lever
+- **DIMM** slots (RAM)
+- **24-pin ATX** main power
+- **8-pin (4+4) EPS** processor power
+- 4-pin fan headers (CPU_FAN, SYS_FAN / CHA_FAN)
+- **SATA** data ports (7-pin L)
+- **M.2** for NVMe or SATA SSDs
+- **PCIe** slots
+- Front-panel headers: USB, audio, power switch, LEDs
+- **CMOS** battery keeps firmware settings and clock
+- Rear I/O: USB 2 / 3 / C, HDMI, and so on
 
-## Expansion cards
+## Expansion slots
 
-- **x16** slot: graphics card. Powerful cards need extra **6-pin or 8-pin PCIe power** from the power supply.
-- **x1** slot: capture card, sound, extra network — usually powered by the slot.
-- Older: **PCI**, **AGP** (Accelerated Graphics Port), **mini-PCIe** in laptops.
+Legacy: **PCI**, **PCI-X**, **AGP** (Accelerated Graphics Port).
 
-Install: use an **ESD** (electrostatic discharge) strap, seat the card fully, screw the metal bracket where the blanking plate was.
+**PCIe** (Peripheral Component Interconnect Express):
 
-```mermaid
-flowchart TB
-  PSU[Power supply] --> ATX[24-pin to motherboard]
-  PSU --> EPS[8-pin to processor area]
-  PSU --> GPUPower[6 or 8-pin to graphics card]
-  Board[Motherboard] --> CPU[Processor in socket]
-  Board --> RAM[Memory in DIMM slots]
-  Board --> GPU[Graphics card in x16 slot]
-```
+- **x1** short — NIC, sound, capture (slot gives about **25 W**)
+- **x16** long — graphics. Slot can supply about **75 W**; hungry cards need extra 6-pin / 8-pin power from the PSU
+- **Mini-PCIe** — Wi-Fi / WWAN in laptops

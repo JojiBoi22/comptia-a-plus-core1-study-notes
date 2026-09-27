@@ -1,6 +1,6 @@
 # Introduction (Core 1)
 
-From the yellow tab **Core 1 Introduction** plus safety and the six-step method.
+From the yellow tabs **Core 1 Introduction**, **Safety**, and **Troubleshooting Methodology**.
 
 ## Four main functions of a PC
 
@@ -33,22 +33,21 @@ flowchart LR
 
 ## Safety for a technician
 
-Four areas:
+Four areas: personal, component, electrical, chemical.
 
-1. **Personal safety** — you (lifts, heat, sharp edges, eyes).
-2. **Component safety** — the parts you are repairing.
-3. **Electrical safety** — mains, capacitors, unplug first.
-4. **Chemical safety** — toner, batteries, solvents.
+Trip hazards: route cables through drop ceilings, under raised floors, or in cable trays.
 
-Trip hazards: route cables through drop ceilings, under raised floors, or in cable trays — not across a walkway.
+Biggest threat to parts: **ESD** (electrostatic discharge). Use a mat and wrist strap.
 
-Biggest threat to parts: **ESD** (electrostatic discharge). Use a mat and wrist strap. One spark can kill a board with no visible mark.
+**Back up data** before you change files or infrastructure.
 
 ## Six-step troubleshooting method
 
-1. Identify the problem.
-2. Establish a theory of probable cause.
-3. Test the theory to find the cause.
-4. Make a plan and apply the fix.
-5. Verify the whole system works (and prevent it happening again if you can).
-6. Document findings, actions, and outcomes.
+1. **Identify the problem.** What is actually failing? Gather symptoms. Ask what changed. Ask what they already tried (do not repeat the same failed step blindly).
+2. **Establish a theory of probable cause.** List likely causes, pick the most probable. Research. Physical check (cables, seating). Unlikely ideas last.
+3. **Test the theory.** Change **one** variable. Confirmed → go fix. Not confirmed → new theory and test again. If you lack skill or access, **escalate**. Stuck after several theories → escalate (do not guess forever).
+4. **Plan of action and implement.** Repair, replace, or workaround. Plan downtime. Get approval if policy says so. Follow vendor steps.
+5. **Verify full system functionality** and apply prevention if you can.
+6. **Document** findings, actions, and outcomes.
+
+Stick to the plan. Do not skip identify → theory → test.
