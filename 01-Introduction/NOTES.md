@@ -47,7 +47,7 @@ Biggest threat to parts: **ESD** (electrostatic discharge). Use a mat and wrist 
 2. **Establish a theory of probable cause.** List likely causes, pick the most probable. Research. Physical check (cables, seating). Unlikely ideas last.
 3. **Test the theory.** Change **one** variable. Confirmed → go fix. Not confirmed → new theory and test again. If you lack skill or access, **escalate**. Stuck after several theories → escalate (do not guess forever).
 4. **Plan of action and implement.** Repair, replace, or workaround. Plan downtime. Get approval if policy says so. Follow vendor steps.
-5. **Verify full system functionality** and apply prevention if you can.
-6. **Document** findings, actions, and outcomes.
+5. **Verify full system functionality.** Confirm the original symptoms are gone. Check the rest of the system. Confirm services after a reboot. Add prevention where it makes sense.
+6. **Document findings.** Record symptoms, cause, and what you did. Use the ticket system on long jobs. Feed the knowledge base. Tickets also show workload if you need more staff or training.
 
 Stick to the plan. Do not skip identify → theory → test.
