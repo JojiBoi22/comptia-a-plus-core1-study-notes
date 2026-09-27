@@ -1,6 +1,6 @@
 # CompTIA A+ Core 1 (220-1201) study notes
 
-Readable notes from Dion Training videos. Every short name is spelled out the first time it appears. Diagrams use GitHub Mermaid blocks (they draw themselves when you open the file on GitHub).
+Readable notes from Dion Training videos and from a handwritten notebook. Every short name is spelled out the first time it appears. Diagrams use GitHub Mermaid blocks.
 
 **Public repo:** https://github.com/JojiBoi22/comptia-a-plus-core1-study-notes
 
@@ -16,7 +16,7 @@ These are personal study notes, not official CompTIA or Dion materials.
 
 | Folder | Topic |
 |--------|--------|
-| `01-Introduction` | Six-step troubleshooting |
+| `01-Introduction` | PC functions, firmware, safety, six-step method |
 | `02-Motherboards` | Processor features, board parts, expansion cards |
 | `03-Cooling-and-Power` | Fans, liquid cooling, power supply |
 | `04-System-Memory` | Random access memory types and install |
@@ -34,3 +34,9 @@ These are personal study notes, not official CompTIA or Dion materials.
 | `16-Network-Servers-and-Services` | File/web/mail/AAA/UTM/ICS |
 | `17-Printer-Types` | Laser, inkjet, thermal, impact, 3D |
 | `18-Printers-and-MFDs` | Setup, drivers, share, scan |
+| `19-Troubleshooting-Print-Devices` | Queue, feed, quality, finishing |
+| `20-Troubleshooting-Networks` | Wired, wireless, VoIP, APIPA, auth |
+| `21-Troubleshooting-Mobile-Devices` | Power, hardware, performance |
+| `22-Storage-Devices` | HDD, SSD, RAID intro, RPM |
+
+Handwritten pages are added in batches (about 20 photos at a time).
